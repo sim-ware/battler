@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script type="text/babel">
-    var EmployeeTable = React.createClass({
+    var PlayerTable = React.createClass({
       render: function() {
         var rows = [];
-        this.props.employees.forEach(function(employee) {
-          rows.push(<Employee employee={employee} />);
+        this.props.players.forEach(function(player) {
+          rows.push(<Pla player={player} />);
         });
         return (
           <div className="container">
@@ -24,8 +24,7 @@
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Age</th>
-                  <th>Years</th>
+                  <th>HP</th>
                 </tr>
               </thead>
               <tbody>{rows}</tbody>
@@ -33,27 +32,26 @@
           </div>);
       }
     });
-    
-    var Employee = React.createClass({
+
+    var Pla = React.createClass({
       render: function() {
         return (
           <tr>
-            <td>{this.props.employee.name}</td>
-            <td>{this.props.employee.age}</td>
-            <td>{this.props.employee.years}</td>
+            <td>{this.props.player.name}</td>
+            <td>{this.props.player.hitpoints}</td>
           </tr>);
       }
     });
 
     var EMPLOYEES = [
-      {name: 'Joe Biden', age: 45, years: 5},
-      {name: 'President Obama', age: 54, years: 8},
-      {name: 'Crystal Mac', age: 34, years: 12},
-      {name: 'James Henry', age: 33, years: 2}
+      {name: 'Joe Biden', hitpoints: 100},
+      {name: 'President Obama', hitpoints: 100},
+      {name: 'Crystal Mac', hitpoints: 100},
+      {name: 'James Henry', hitpoints: 100}
     ];
 
     ReactDOM.render(
-      <EmployeeTable employees={EMPLOYEES} />, document.getElementById('root')
+      <PlayerTable players={EMPLOYEES} />, document.getElementById('root')
     );
     </script>
 </body>
