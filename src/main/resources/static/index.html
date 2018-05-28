@@ -12,11 +12,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script type="text/babel">
+    // var Header = React.createClass({
+    //   render: function() {
+    //     return (
+    //       <div>
+    //
+    //       </div>);
+    //   }
+    // });
+
     var PlayerTable = React.createClass({
       render: function() {
         var rows = [];
         this.props.players.forEach(function(player) {
-          rows.push(<Pla player={player} />);
+          rows.push(<Player player={player} />);
         });
         return (
           <div className="container">
@@ -33,7 +42,7 @@
       }
     });
 
-    var Pla = React.createClass({
+    var Player = React.createClass({
       render: function() {
         return (
           <tr>
@@ -43,15 +52,13 @@
       }
     });
 
-    var EMPLOYEES = [
-      {name: 'Joe Biden', hitpoints: 100},
-      {name: 'President Obama', hitpoints: 100},
-      {name: 'Crystal Mac', hitpoints: 100},
-      {name: 'James Henry', hitpoints: 100}
+    var PLAYERS = [
+      {name: 'Pikachu', hitpoints: 100},
+      {name: 'Mewtwo', hitpoints: 100}
     ];
 
     ReactDOM.render(
-      <PlayerTable players={EMPLOYEES} />, document.getElementById('root')
+      <PlayerTable players={PLAYERS} />, document.getElementById('root')
     );
     </script>
 </body>
