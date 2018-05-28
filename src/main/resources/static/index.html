@@ -12,14 +12,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script type="text/babel">
-    // var Header = React.createClass({
-    //   render: function() {
-    //     return (
-    //       <div>
-    //
-    //       </div>);
-    //   }
-    // });
+    var Header = React.createClass({
+      render: function() {
+        return (
+          <div class="container">
+              <div class="jumbotron">
+                  <h1>Battler</h1>
+                  <p>A Pokéclone for good times on the web.</p>
+              </div>
+          </div>
+          );
+      }
+    });
 
     var PlayerTable = React.createClass({
       render: function() {
@@ -58,6 +62,7 @@
     ];
 
     ReactDOM.render(
+      // <Header />, document.getElementById('root')
       <PlayerTable players={PLAYERS} />, document.getElementById('root')
     );
     </script>
